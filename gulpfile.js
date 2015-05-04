@@ -34,7 +34,7 @@ var packageJson = require('./package.json');
 
 // Lint JavaScript
 gulp.task('jshint', function () {
-  return gulp.src('app/scripts/**/*.js')
+  return gulp.src('source/scripts/**/*.js')
     .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
@@ -43,7 +43,7 @@ gulp.task('jshint', function () {
 
 // Optimize images
 gulp.task('images', function () {
-  return gulp.src('app/images/**/*')
+  return gulp.src('source/images/**/*')
     .pipe($.cache($.imagemin({
       progressive: true,
       interlaced: true
@@ -55,8 +55,8 @@ gulp.task('images', function () {
 // Copy all files at the root level (app)
 gulp.task('copy', function () {
   return gulp.src([
-    'app/*',
-    '!app/*.html',
+    'source/*',
+    '!source/*.html',
     'node_modules/apache-server-configs/dist/.htaccess'
   ], {
     dot: true
@@ -66,7 +66,7 @@ gulp.task('copy', function () {
 
 // Copy web fonts to dist
 gulp.task('fonts', function () {
-  return gulp.src(['app/fonts/**'])
+  return gulp.src(['source/fonts/**'])
     .pipe(gulp.dest('dist/fonts'))
     .pipe($.size({title: 'fonts'}));
 });
@@ -91,10 +91,11 @@ gulp.task('styles', function () {
 
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
-    'app/**/*.scss',
-    'app/styles/**/*.css'
+    'source/**/*.scss',
+    'source/styles/**/*.css'
   ])
     .pipe($.changed('.tmp/styles', {extension: '.css'}))
+    .pipe($.changed('source/styles/**/*', {extension: '.scss'}))
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       precision: 10,
@@ -113,7 +114,7 @@ gulp.task('styles', function () {
 gulp.task('scripts', function () {
   var sources = [
     // Scripts
-    'app/scripts/**/*.js'
+    'source/scripts/**/*.js'
   ];
   return gulp.src(sources)
     .pipe($.concat('main.min.js'))
@@ -127,14 +128,14 @@ gulp.task('scripts', function () {
 gulp.task('html', function () {
   var assets = $.useref.assets({searchPath: '{.tmp,app}'});
 
-  return gulp.src('app/**/**/*.html')
+  return gulp.src('source/**/**/*.html')
     .pipe(assets)
     // Remove Any Unused CSS
     // Note: If not using the Style Guide, you can delete it from
     // the next line to only include styles your project uses.
     .pipe($.if('*.css', $.uncss({
       html: [
-        'app/index.html'
+        'source/index.html'
       ],
       // CSS Selectors for UnCSS to ignore
       ignore: [
@@ -157,7 +158,7 @@ gulp.task('html', function () {
 });
 
 // Clean output directory
-gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
+gulp.task('clean', del.bind(null, ['.tmp', 'dist'], {dot: true}));
 
 // Watch files for changes & reload
 gulp.task('serve', ['styles'], function () {
@@ -172,10 +173,10 @@ gulp.task('serve', ['styles'], function () {
     server: ['.tmp', 'app']
   });
 
-  gulp.watch(['app/**/*.html'], reload);
-  gulp.watch(['app/styles/**/**/**/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['app/scripts/**/*.js'], ['jshint']);
-  gulp.watch(['app/images/**/*'], reload);
+  gulp.watch(['source/**/*.html'], reload);
+  gulp.watch(['source/styles/**/**/**/**/*.{scss,css}'], ['styles', reload]);
+  gulp.watch(['source/scripts/**/*.js'], ['jshint']);
+  gulp.watch(['source/images/**/*'], reload);
 });
 
 // Build and serve the output from the dist build
