@@ -65,26 +65,25 @@ gulp.task('copy', function () {
 });
 
 // Copy web fonts to dist
-gulp.task('fonts', function () {
-  return gulp.src(['source/fonts/**'])
-    .pipe(gulp.dest('dist/fonts'))
-    .pipe($.size({title: 'fonts'}));
-});
+// gulp.task('fonts', function () {
+//   return gulp.src(['source/fonts/**'])
+//     .pipe(gulp.dest('dist/fonts'))
+//     .pipe($.size({title: 'fonts'}));
+// });
 
 
 // Compile and automatically prefix stylesheets
 gulp.task('styles', function () {
 
   var AUTOPREFIXER_BROWSERS = [
+    'android >= 3',
+    'chrome >= 29',
+    'firefox >= 29',
     'ie >= 10',
     'ie_mob >= 10',
-    'ff >= 30',
-    'chrome >= 34',
-    'safari >= 7',
-    'opera >= 23',
-    'ios >= 7',
-    'android >= 4.4',
-    'bb >= 10'
+    'iOS >= 8',
+    'opera >= 24',
+    'safari >= 7'
   ];
 
 
@@ -197,7 +196,7 @@ gulp.task('serve:dist', ['default'], function () {
 gulp.task('default', ['clean'], function (cb) {
   runSequence(
     'styles',
-    ['jshint', 'html', 'scripts', 'images', 'fonts', 'copy'],
+    ['jshint', 'html', 'scripts', 'images', 'copy'],
     'generate-service-worker',
     cb);
 });

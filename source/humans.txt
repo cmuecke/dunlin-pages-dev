@@ -3,12 +3,6 @@
 
 # TEAM
 
-  <name> -- <role> -- <twitter>
-
-# THANKS
-
-  <name>
-
-# TECHNOLOGY COLOPHON
-
-  HTML5, CSS3
+Matthias Thiel
+Alexander Heimbuch - Twitter: @zusatzstoff
+Christian Mücke - Twitter: @coldheat
