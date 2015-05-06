@@ -1,3 +1,6 @@
+// Webfont
+@import url("http://fonts.googleapis.com/css?family=Bitter:400italic,300,400,600,700");
+
 @import '_variables';
 @import '_mixins';
 
@@ -6,21 +9,25 @@
 @import '_modules/_normalize';
 @import '_modules/_base';
 @import '_modules/_typography';
+@import '_modules/_forms';
+@import '_modules/_utilities';
 
-body {
-  // background-color: green;
-
-  @media screen and (min-width: $medium-screen) and (max-width: ($large-screen - 1)) {
-    // background-color: yellow;
-  }
-
-  @media screen and (min-width: $large-screen) {
-    // background-color: grey;
-  }
-}
+body {}
 
 // @include clearfix();
 
 .main {
+  position: relative;
+  margin: 0 auto;
+  min-width: $min-content-width;
+  @include clearfix();
 
+  @media screen and (max-width: ($medium-screen - 1)) {
+    padding: 0 $small-screen-column-margin;
+  }
+
+  @media screen and (min-width: $medium-screen) {
+    padding-left: ((2 * $gutted-column) + $grid-gutter);
+    padding-right: ((2 * $gutted-column) + $grid-gutter);
+  }
 }

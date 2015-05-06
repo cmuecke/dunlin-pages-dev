@@ -6,13 +6,10 @@ $large-screen:        1060px;
 $min-content-width:   280px;
 $max-content-width:   1470px;
 
-// Current: 1118px / 13px = 86em
-// Old Unique Layouts fixed width: 1362 = 1118 + 244 margin-left
-
 //
 // Typography
-$global-fonts:          'Open Sans', sans-serif;
-$headline-fonts:        'Bitter', serif;
+$global-fonts:          Bitter;
+$headline-fonts:        sans-serif;
 $base-font-size:        10px;
 $base-line-height:      1.5;
 $base-content-spacer:   1.25em;
@@ -20,10 +17,14 @@ $lowered-font-size:     90%;
 
 //
 // Colors
-$content-background-color: #fefefe;
-$base-font-color: #111;
-$link-color:  #c00;
-$base-ui-color: #c00;
+$content-background-color:  #fefefe;
+$base-font-color:           #111;
+$link-color:                #c00;
+$link-color-hover:          desaturate($link-color, 50%);
+$base-ui-color:             desaturate($link-color, 50%);
+$input-background-color: #fff;
+$input-border-color: #ccc;
+$button-font-color: #fff;
 
 //
 // Grid
