@@ -31,3 +31,14 @@ body {}
     padding-right: ((2 * $gutted-column) + $grid-gutter);
   }
 }
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+.screenshot {
+  @media screen and (min-width: $medium-screen) {
+    width: 75%;
+    margin-left: -(((2 * $gutted-column) + (2 * $grid-gutter)) * (100 / strip-units(100% - ((2 * $gutted-column) + (2 * $grid-gutter)))));
+  }
+}

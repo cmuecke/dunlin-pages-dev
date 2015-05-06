@@ -29,3 +29,49 @@ body {
 ::selection {
   @include selected-text();
 }
+
+//
+// Headlines
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+legend {
+  line-height: round(($base-line-height * 0.9));
+  margin: 0 0 0.5em;
+  font-family: $headline-fonts;
+  font-weight: normal;
+}
+
+h1,
+h2 {
+  line-height: round(($base-line-height * 0.8));
+}
+
+h1 {
+  font-size: 250%;
+
+  @media screen and (max-width: ($medium-screen - 1)) {
+    font-size: 200%;
+  }
+}
+
+h2 {
+  font-size: 180%;
+}
+
+h3 {
+  font-size: 150%;
+}
+
+h4 {
+  font-size: 125%;
+}
+
+h5,
+h6,
+legend {
+  font-size: 110%;
+}
