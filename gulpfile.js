@@ -126,7 +126,7 @@ gulp.task('scripts', function () {
 
 // Scan your HTML for assets & optimize them
 gulp.task('html', function () {
-  var assets = $.useref.assets({searchPath: '{.tmp,app}'});
+  var assets = $.useref.assets({searchPath: '{.tmp,source}'});
 
   return gulp.src('source/**/**/*.html')
     .pipe(assets)
@@ -170,7 +170,7 @@ gulp.task('serve', ['styles'], function () {
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
     // https: true,
-    server: ['.tmp', 'app']
+    server: ['.tmp', 'source']
   });
 
   gulp.watch(['source/**/*.html'], reload);

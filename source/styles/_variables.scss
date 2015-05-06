@@ -1,0 +1,58 @@
+//
+// Screen sizes
+$medium-screen:       630px;
+$large-screen:        1060px;
+
+$min-content-width:   280px;
+$max-content-width:   1470px;
+
+// Current: 1118px / 13px = 86em
+// Old Unique Layouts fixed width: 1362 = 1118 + 244 margin-left
+
+//
+// Typography
+$global-fonts:          'Open Sans', sans-serif;
+$headline-fonts:        'Bitter', serif;
+$base-font-size:        10px;
+$base-line-height:      1.5;
+$base-content-spacer:   1.25em;
+$lowered-font-size:     90%;
+
+//
+// Colors
+$content-background-color: #fefefe;
+$base-font-color: #111;
+$link-color:  #c00;
+$base-ui-color: #c00;
+
+//
+// Grid
+$grid-gutter:     1.78890877%;
+$column-width:    3.66726297%;
+$gutted-column:   5.45617174%;
+
+//
+// Medium screen nested scale
+$base-medium-column-margin: ((2 * $gutted-column) + $grid-gutter);
+
+//
+// Small screen main column
+$small-screen-column-margin:        (2 * ceil($grid-gutter));
+$small-screen-column-margin-nested: ($small-screen-column-margin * 1.1);
+
+//
+// Scale Faktor (100 / (100 - ((2 * $gutted-column) + $grid-gutter)) ))
+// Faktor aus: 100% - margins / 100
+
+// Fuer spaeter: Raster Mathe
+//
+// $number-of-columns: 18;
+// $grid-gutter:       1.8%;
+// $column-width:      unit(((100 - (($number-of-columns + 2) * $grid-gutter)) / $number-of-columns), %);
+// $gutted-column:     ($column-width + $grid-gutter);
+//
+// $column-count:     18;
+// $column-math:      percentage(1 / $column-count);
+// $effective-width:  percentage(1 - ( 2 * $column-gutter-m));
+// $column-gutter-m:  1.5%;
+// $column-width-m:   (0.65 * $column-math);
