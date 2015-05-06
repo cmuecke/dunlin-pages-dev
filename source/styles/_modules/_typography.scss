@@ -39,15 +39,10 @@ h4,
 h5,
 h6,
 legend {
-  line-height: round(($base-line-height * 0.9));
+  line-height: 1.2;
   margin: 0 0 0.5em;
   font-family: $headline-fonts;
-  font-weight: 300;
-}
-
-h1,
-h2 {
-  line-height: round(($base-line-height * 0.8));
+  font-weight: normal;
 }
 
 h1 {
@@ -88,9 +83,6 @@ ol,
 dl,
 pre,
 iframe,
-input,
-textarea,
-legend,
 figure,
 dd,
 table,

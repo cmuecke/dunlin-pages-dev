@@ -25,6 +25,14 @@ body {}
 }
 
 .column {
+  & + & {
+    padding-top: 1.5em;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
   @media screen and (max-width: ($medium-screen - 1)) {
     padding: 0 $small-screen-column-margin;
   }
@@ -32,10 +40,6 @@ body {}
   @media screen and (min-width: $medium-screen) {
     padding-left: ((2 * $gutted-column) + $grid-gutter);
     padding-right: ((2 * $gutted-column) + $grid-gutter);
-  }
-
-  + .column {
-    padding-top: 1.5em;
   }
 }
 
