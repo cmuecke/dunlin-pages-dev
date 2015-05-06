@@ -42,7 +42,7 @@ legend {
   line-height: round(($base-line-height * 0.9));
   margin: 0 0 0.5em;
   font-family: $headline-fonts;
-  font-weight: normal;
+  font-weight: 300;
 }
 
 h1,
@@ -59,7 +59,7 @@ h1 {
 }
 
 h2 {
-  font-size: 180%;
+  font-size: 160%;
 }
 
 h3 {
@@ -74,4 +74,31 @@ h5,
 h6,
 legend {
   font-size: 110%;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style-position: inside;
+}
+
+p,
+ul,
+ol,
+dl,
+pre,
+iframe,
+input,
+textarea,
+legend,
+figure,
+dd,
+table,
+hr,
+blockquote {
+  margin: 0 0 $base-content-spacer;
+
+  @media screen and (min-width: $medium-screen) and (max-width: ($large-screen - 1)) {
+    margin-bottom: 1.5em;
+  }
 }

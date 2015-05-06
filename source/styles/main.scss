@@ -1,5 +1,5 @@
 // Webfont
-@import url("http://fonts.googleapis.com/css?family=Bitter:400italic,300,400,600,700");
+@import url("http://fonts.googleapis.com/css?family=Martel:400,300,600,700,800");
 
 @import '_variables';
 @import '_mixins';
@@ -19,9 +19,12 @@ body {}
 .main {
   position: relative;
   margin: 0 auto;
+  padding: 2em 0;
   min-width: $min-content-width;
   @include clearfix();
+}
 
+.column {
   @media screen and (max-width: ($medium-screen - 1)) {
     padding: 0 $small-screen-column-margin;
   }
@@ -29,6 +32,10 @@ body {}
   @media screen and (min-width: $medium-screen) {
     padding-left: ((2 * $gutted-column) + $grid-gutter);
     padding-right: ((2 * $gutted-column) + $grid-gutter);
+  }
+
+  + .column {
+    padding-top: 1.5em;
   }
 }
 
@@ -38,7 +45,23 @@ body {}
 
 .screenshot {
   @media screen and (min-width: $medium-screen) {
-    width: 75%;
-    margin-left: -(((2 * $gutted-column) + (2 * $grid-gutter)) * (100 / strip-units(100% - ((2 * $gutted-column) + (2 * $grid-gutter)))));
+    //width: 75%;
+    //margin-left: -(((2 * $gutted-column) + (2 * $grid-gutter)) * (100 / strip-units(100% - ((2 * $gutted-column) + (2 * $grid-gutter)))));
   }
+}
+
+.ci {
+  text-align: center;
+
+  h1 {
+    margin-bottom: .1em;
+  }
+}
+
+#try-out {
+  padding: 2.5em;
+  background: url('http://m6.i.pbase.com/o6/26/767626/1/79214436.ktQYqAcV.Dunlin029.jpg') $base-font-color;
+  background-position: 50%;
+  color: #fefefe;
+  text-align: center;
 }

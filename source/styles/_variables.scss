@@ -8,8 +8,8 @@ $max-content-width:   1470px;
 
 //
 // Typography
-$global-fonts:          Bitter;
-$headline-fonts:        sans-serif;
+$global-fonts:          'Martel', serif;;
+$headline-fonts:        'Martel', serif;;
 $base-font-size:        10px;
 $base-line-height:      1.5;
 $base-content-spacer:   1.25em;
@@ -17,7 +17,7 @@ $lowered-font-size:     90%;
 
 //
 // Colors
-$content-background-color:  #efefef;
+$content-background-color:  #fefefe;
 $base-font-color:           #57371B;
 $link-color:                #c00;
 $link-color-hover:          desaturate($link-color, 50%);
