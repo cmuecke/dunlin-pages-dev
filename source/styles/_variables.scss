@@ -11,17 +11,17 @@ $max-content-width:   1470px;
 $global-fonts:          'Martel', serif;;
 $headline-fonts:        sans-serif;;
 $base-font-size:        10px;
-$base-line-height:      1.5;
+$base-line-height:      1.6;
 $base-content-spacer:   1.25em;
 $lowered-font-size:     90%;
 
 //
 // Colors
 $content-background-color:  #fefefe;
-$base-font-color:           #57371B;
-$link-color:                #c00;
+$base-font-color:           #111;
+$link-color:                #1bbc9b;
 $link-color-hover:          desaturate($link-color, 50%);
-$base-ui-color:             desaturate($link-color, 50%);
+$base-ui-color:             $link-color;
 $input-background-color: #fff;
 $input-border-color: #ccc;
 $button-font-color: #fff;

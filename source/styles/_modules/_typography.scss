@@ -42,6 +42,7 @@ legend {
   line-height: 1.2;
   margin: 0 0 0.5em;
   font-family: $headline-fonts;
+  color: $base-ui-color;
   font-weight: normal;
 }
 
@@ -54,15 +55,15 @@ h1 {
 }
 
 h2 {
-  font-size: 160%;
+  font-size: 180%;
 }
 
 h3 {
-  font-size: 150%;
+  font-size: 160%;
 }
 
 h4 {
-  font-size: 125%;
+  font-size: 130%;
 }
 
 h5,

@@ -16,25 +16,35 @@ body {}
 
 // @include clearfix();
 
+header {
+  background-color: $base-ui-color;
+  color: white;
+  @include clearfix();
+
+  @media screen and (max-width: ($medium-screen - 1)) {
+    padding: 8em $small-screen-column-margin 0;
+  }
+
+  h1 {
+    color: white;
+    margin-bottom: .3em;
+  }
+}
+
 .main {
   position: relative;
   margin: 0 auto;
-  padding: 2em 0;
   min-width: $min-content-width;
+  padding-bottom: 5em;
   @include clearfix();
 }
 
 .column {
-  & + & {
-    padding-top: 1.5em;
-  }
-
-  h2 {
-    text-align: center;
-  }
+  padding-top: 1.5em;
 
   @media screen and (max-width: ($medium-screen - 1)) {
-    padding: 0 $small-screen-column-margin;
+    padding-left: $small-screen-column-margin;
+    padding-right: $small-screen-column-margin;
   }
 
   @media screen and (min-width: $medium-screen) {
@@ -64,8 +74,15 @@ body {}
 
 #try-out {
   padding: 2.5em;
-  background: url('http://m6.i.pbase.com/o6/26/767626/1/79214436.ktQYqAcV.Dunlin029.jpg') $base-font-color;
+  background-color: $base-font-color;
   background-position: 50%;
   color: #fefefe;
   text-align: center;
+}
+
+.pull-fw-small-screen {
+  @media screen and (max-width: ($medium-screen - 1)) {
+      margin-left: -$small-screen-column-margin;
+      margin-right: -$small-screen-column-margin;
+    }
 }
