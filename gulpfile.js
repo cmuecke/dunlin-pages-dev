@@ -65,11 +65,11 @@ gulp.task('copy', function () {
 });
 
 // Copy web fonts to dist
-// gulp.task('fonts', function () {
-//   return gulp.src(['source/fonts/**'])
-//     .pipe(gulp.dest('dist/fonts'))
-//     .pipe($.size({title: 'fonts'}));
-// });
+gulp.task('fonts', function () {
+  return gulp.src(['source/fonts/**'])
+    .pipe(gulp.dest('dist/fonts'))
+    .pipe($.size({title: 'fonts'}));
+});
 
 
 // Compile and automatically prefix stylesheets
@@ -104,7 +104,6 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('.tmp'))
     // Concatenate and minify styles
     .pipe($.if('*.css', $.csso()))
-    .pipe($.sourcemaps.write())
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'styles'}));
 })
