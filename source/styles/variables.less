@@ -1,0 +1,42 @@
+//
+// Screen sizes
+@medium-screen:       630px;
+@large-screen:        1060px;
+
+@min-content-width:   280px;
+@max-content-width:   1470px;
+
+//
+// Typography
+@global-fonts:          sans-serif;
+@headline-fonts:        'Raleway', sans-serif;
+@base-font-size:        10px;
+@base-line-height:      1.6;
+@base-content-spacer:   1.25em;
+@lowered-font-size:     90%;
+
+//
+// Colors
+@content-background-color:  #fefefe;
+@base-font-color:           #111;
+@link-color:                #1bbc9b;
+@link-color-hover:          desaturate(@link-color, 50%);
+@base-ui-color:             @link-color;
+@input-background-color:    #fff;
+@input-border-color:        #ccc;
+@button-font-color:         #fff;
+
+//
+// Grid
+@grid-gutter:     1.78890877%;
+@column-width:    3.66726297%;
+@gutted-column:   5.45617174%;
+
+//
+// Medium screen nested scale
+@base-medium-column-margin: ((2 * @gutted-column) + @grid-gutter);
+
+//
+// Small screen main column
+@small-screen-column-margin:        (2 * ceil(@grid-gutter));
+@small-screen-column-margin-nested: (@small-screen-column-margin * 1.1);

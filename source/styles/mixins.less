@@ -1,6 +1,6 @@
 //
 // Simple float clear mixin
-@mixin clearfix() {
+.clearfix() {
   &:after {
     display: table;
     clear: left;
@@ -11,7 +11,7 @@
 //
 // Clears bottom spacing for content within modules, panels, wells etc. ...
 // Requires to not nest deeper than 2 levels for now.
-@mixin module-bottom-spacing() {
+.module-bottom-spacing() {
   & > *:last-child,
   & > *:last-child > *:last-child {
     margin-bottom: 0;
@@ -20,8 +20,8 @@
 
 //
 // Selected text
-@mixin selected-text() {
-  color: $content-background-color;
-  background: desaturate($base-ui-color, 20%);
+.selected-text() {
+  color: @content-background-color;
+  background: desaturate(@base-ui-color, 20%);
   text-shadow: none;
 }

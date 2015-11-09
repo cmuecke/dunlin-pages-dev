@@ -1,0 +1,99 @@
+@import 'variables.less';
+@import 'mixins.less';
+
+//
+// Modules
+@import 'modules/fonts.less';
+@import 'modules/normalize.less';
+@import 'modules/base.less';
+@import 'modules/typography.less';
+@import 'modules/utilities.less';
+
+// //
+// // Styles
+header {
+  padding-top: 3em;
+  background-color: @base-ui-color;
+  background-image: linear-gradient(darken(@base-ui-color, 10%) 20%, @base-ui-color 100%);
+  color: white;
+  text-align: center;
+  .clearfix();
+
+  @media screen and (max-width: (@medium-screen - 1)) {
+    padding: 8em @small-screen-column-margin 0;
+  }
+
+  h1 {
+    color: white;
+    margin-bottom: .3em;
+  }
+}
+
+.icon-logo {
+  display: inline-block;
+  width: 6em;
+  height: 6em;
+  fill: currentColor;
+  vertical-align: middle;
+  animation: fade-in 1.75s cubic-bezier(0.4, 0.52, 0.18, 0.96);
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.main {
+  position: relative;
+  margin: 0 auto;
+  min-width: @min-content-width;
+  padding-bottom: 5em;
+  .clearfix();
+}
+
+.column {
+  padding-top: 2em;
+  padding-bottom: 2em;
+
+  @media screen and (max-width: (@medium-screen - 1)) {
+    padding-left: @small-screen-column-margin;
+    padding-right: @small-screen-column-margin;
+  }
+
+  @media screen and (min-width: @medium-screen) {
+    padding-left: ((3 * @gutted-column) + @grid-gutter);
+    padding-right: ((3 * @gutted-column) + @grid-gutter);
+  }
+}
+
+.try-out {
+  background-color: darken(@base-ui-color, 30%);
+  text-align: center;
+}
+
+.footer {
+  padding-top: 1em;
+  border-top: 1px solid rgba( red(@base-ui-color), green(@base-ui-color), blue(@base-ui-color), 0.3);
+}
+
+.primary-action {
+    display: block;
+    color: white;
+    padding: .3em;
+    border-radius: .5em;
+    font-family: sans-serif;
+    font-size: 1.5em;
+    border: 1px solid @base-ui-color;
+    transition: background-color 0.2s;
+
+    &:hover {
+      color: white;
+      background-color: rgba( red(@base-ui-color), green(@base-ui-color), blue(@base-ui-color), 0.3);
+    }
+}

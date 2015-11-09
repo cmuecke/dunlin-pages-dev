@@ -32,6 +32,7 @@ var fs = require('fs');
 var path = require('path');
 var packageJson = require('./package.json');
 var critical = require('critical').stream;
+var less = require('gulp-less');
 
 // Lint JavaScript
 gulp.task('jshint', function () {
@@ -98,19 +99,18 @@ gulp.task('styles', function () {
 
     // For best performance, don't add Sass partials to `gulp.src`
     return gulp.src([
-            'source/**/*.scss',
+            'source/**/main.less',
             'source/styles/**/*.css'
         ])
         .pipe($.changed('.tmp/styles', {
             extension: '.css'
         }))
         .pipe($.changed('source/styles/**/*', {
-            extension: '.scss'
+            extension: '.less'
         }))
         .pipe($.sourcemaps.init())
-        .pipe($.sass({
-            precision: 10,
-            onError: console.error.bind(console, 'Sass error:')
+        .pipe($.less({
+            onError: console.error.bind(console, 'Less error:')
         }))
         .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
         .pipe(gulp.dest('.tmp'))
@@ -207,7 +207,7 @@ gulp.task('serve', ['styles'], function () {
     });
 
     gulp.watch(['source/**/*.html'], reload);
-    gulp.watch(['source/styles/**/**/**/**/*.{scss,css}'], ['styles', reload]);
+    gulp.watch(['source/styles/**/**/**/**/*.{less,css}'], ['styles', reload]);
     gulp.watch(['source/scripts/**/*.js'], ['jshint']);
     gulp.watch(['source/images/**/*'], reload);
 });
