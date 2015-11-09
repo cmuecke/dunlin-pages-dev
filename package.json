@@ -2,6 +2,7 @@
   "devDependencies": {
     "apache-server-configs": "^2.7.1",
     "browser-sync": "^2.6.4",
+    "critical": "^0.6.0",
     "del": "^2.0.2",
     "gulp": "^3.8.5",
     "gulp-autoprefixer": "^3.1.0",
@@ -13,6 +14,7 @@
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.0.0",
     "gulp-jshint": "^1.6.3",
+    "gulp-less": "^3.0.3",
     "gulp-load-plugins": "^1.1.0",
     "gulp-minify-html": "^1.0.4",
     "gulp-replace": "^0.5.3",
