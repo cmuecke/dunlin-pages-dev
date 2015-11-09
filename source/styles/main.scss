@@ -1,11 +1,9 @@
-// Webfont
-@import url("http://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
 @import '_variables';
 @import '_mixins';
 
 //
 // Modules
+@import '_modules/_fonts';
 @import '_modules/_normalize';
 @import '_modules/_base';
 @import '_modules/_typography';
