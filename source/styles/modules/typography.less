@@ -1,33 +1,33 @@
 //
 // Global typography
 html {
-  font-size: $base-font-size;
+  font-size: @base-font-size;
 }
 
 body {
-  background: $content-background-color;
-  color: $base-font-color;
+  background: @content-background-color;
+  color: @base-font-color;
   font-size: 150%;
-  font-family: $global-fonts;
-  line-height: $base-line-height;
+  font-family: @global-fonts;
+  line-height: @base-line-height;
 
-  @media screen and (min-width: $medium-screen) and (max-width: ($large-screen - 1)) {
+  @media screen and (min-width: @medium-screen) and (max-width: (@large-screen - 1)) {
     font-size: 170%;
-    line-height: ($base-line-height + 0.1);
+    line-height: (@base-line-height + 0.1);
   }
 
-  @media screen and (min-width: $large-screen) {
+  @media screen and (min-width: @large-screen) {
     font-size: 180%;
-    line-height: ($base-line-height + 0.15);
+    line-height: (@base-line-height + 0.15);
   }
 }
 
 ::-moz-selection {
-  @include selected-text();
+  .selected-text();
 }
 
 ::selection {
-  @include selected-text();
+  .selected-text();
 }
 
 //
@@ -41,15 +41,15 @@ h6,
 legend {
   line-height: 1.2;
   margin: 0 0 0.5em;
-  font-family: $headline-fonts;
-  color: $base-ui-color;
+  font-family: @headline-fonts;
+  color: @base-ui-color;
   font-weight: normal;
 }
 
 h1 {
   font-size: 250%;
 
-  @media screen and (max-width: ($medium-screen - 1)) {
+  @media screen and (max-width: (@medium-screen - 1)) {
     font-size: 200%;
   }
 }
@@ -89,9 +89,9 @@ dd,
 table,
 hr,
 blockquote {
-  margin: 0 0 $base-content-spacer;
+  margin: 0 0 @base-content-spacer;
 
-  @media screen and (min-width: $medium-screen) and (max-width: ($large-screen - 1)) {
+  @media screen and (min-width: @medium-screen) and (max-width: (@large-screen - 1)) {
     margin-bottom: 1.5em;
   }
 }
