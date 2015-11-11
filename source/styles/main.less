@@ -14,7 +14,7 @@
 header {
   padding-top: 3em;
   background-color: @base-ui-color;
-  background-image: linear-gradient(darken(@base-ui-color, 10%) 20%, @base-ui-color 100%);
+  background-image: linear-gradient(darken(@base-ui-color, 15%) 30%, @base-ui-color 100%);
   color: white;
   text-align: center;
   .clearfix();
@@ -41,11 +41,11 @@ header {
 @keyframes fade-in {
   0% {
     opacity: 0;
-    transform: scale(0.1);
+    transform: scale(0) rotateY(45deg) rotateX(45deg);
   }
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) rotateY(0deg) rotateX(0deg);
   }
 }
 
@@ -96,4 +96,11 @@ header {
       color: white;
       background-color: rgba( red(@base-ui-color), green(@base-ui-color), blue(@base-ui-color), 0.3);
     }
+}
+
+.sample-screen {
+  box-shadow: 0px 1em 1.5em #ccc;
+  float: right;
+  max-width: 50%;
+  margin-left: 2em;
 }

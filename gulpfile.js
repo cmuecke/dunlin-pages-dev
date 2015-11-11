@@ -33,6 +33,10 @@ var path = require('path');
 var packageJson = require('./package.json');
 var critical = require('critical').stream;
 var less = require('gulp-less');
+var svgstore = require('gulp-svgstore');
+var svgmin = require('gulp-svgmin');
+var cheerio = require('gulp-cheerio');
+var inject = require('gulp-inject');
 
 // Lint JavaScript
 gulp.task('jshint', function () {
@@ -188,13 +192,37 @@ gulp.task('critical', function () {
         .pipe(gulp.dest('dist'));
 });
 
+// Create SVG sprite & insert it into index.html
+gulp.task('svgstore', function () {
+    var svgs = gulp
+        .src('source/images/**/*.svg')
+        .pipe(svgmin())
+        .pipe(svgstore({
+            inlineSvg: true
+        }))
+        .pipe(cheerio(function ($) {
+            $('svg').attr('display', 'none');
+        }));
+
+    function fileContents(filePath, file) {
+        return file.contents.toString();
+    }
+
+    return gulp
+        .src('source/index.html')
+        .pipe(inject(svgs, {
+            transform: fileContents
+        }))
+        .pipe(gulp.dest('source/'));
+});
+
 // Clean output directory
 gulp.task('clean', del.bind(null, ['.tmp', 'dist'], {
     dot: true
 }));
 
 // Watch files for changes & reload
-gulp.task('serve', ['styles'], function () {
+gulp.task('serve', ['svgstore', 'styles'], function () {
     browserSync({
         notify: false,
         // Customize the BrowserSync console logging prefix
@@ -229,7 +257,7 @@ gulp.task('serve:dist', ['default'], function () {
 // Build production files, the default task
 gulp.task('default', ['clean'], function (cb) {
     runSequence(
-        'styles', ['jshint', 'html', 'scripts', 'images', 'fonts', 'copy'], 'critical',
+        'svgstore', 'styles', ['jshint', 'html', 'scripts', 'images', 'fonts', 'copy'], 'critical',
         cb);
 });
 

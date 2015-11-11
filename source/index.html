@@ -18,9 +18,8 @@
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
-    <svg class="hidden" xmlns="http://www.w3.org/2000/svg"><symbol viewBox="0 0 24 24" id="logo-icon"><title>logo-icon</title>
-    <path d="M8.72543413,14.9369804 C7.40221691,17.1019459 6.27532114,20.0155624 5.60079055,21.9481123 C2.81512177,19.9524024 1,16.6881734 1,13 C1,6.92486775 5.92486775,2 12,2 C18.0751322,2 23,6.92486775 23,13 C23,16.6881734 21.1848782,19.9524024 18.3992095,21.9481123 C17.7334695,20.040748 16.6270783,17.1777215 15.3261989,15.0220014 C16.5540541,14.0582602 17.3428571,12.5605332 17.3428571,10.8785714 C17.3428571,7.97118671 14.9859561,5.61428571 12.0785714,5.61428571 C9.17118671,5.61428571 6.81428571,7.97118671 6.81428571,10.8785714 C6.81428571,12.5118484 7.55808541,13.9714016 8.72543413,14.9369804 Z M12.1571429,13.6285714 C13.7193197,13.6285714 14.9857143,12.3621769 14.9857143,10.8 C14.9857143,9.23782314 13.7193197,7.97142857 12.1571429,7.97142857 C10.594966,7.97142857 9.32857143,9.23782314 9.32857143,10.8 C9.32857143,12.3621769 10.594966,13.6285714 12.1571429,13.6285714 Z"></path>
-    </svg>
+
+  <!-- inject:svg --><svg xmlns="http://www.w3.org/2000/svg" display="none"><symbol id="logo-icon" viewBox="0 0 24 24"><path d="M8.725 14.937c-1.323 2.165-2.45 5.08-3.124 7.01C2.816 19.953 1 16.688 1 13 1 6.925 5.925 2 12 2s11 4.925 11 11c0 3.688-1.815 6.952-4.6 8.948-.667-1.907-1.773-4.77-3.074-6.926 1.228-.964 2.017-2.46 2.017-4.143 0-2.91-2.357-5.266-5.264-5.266-2.91 0-5.266 2.357-5.266 5.265 0 1.632.744 3.09 1.91 4.057zm3.432-1.308c1.562 0 2.83-1.268 2.83-2.83s-1.268-2.83-2.83-2.83S9.33 9.24 9.33 10.8s1.265 2.83 2.827 2.83z"/></symbol></svg><!-- endinject -->
 
     <div class="main">
       <header>
@@ -35,15 +34,24 @@
         <a class="primary-action content-module" href="https://video.dunlin.io" title="Try it">Try it</a>
       </section>
 
-      <section class="column content-module">
-        <h2>What's this?</h2>
+      <section class="column content-module content-module-about">
+        <img class="sample-screen large-screen-only try-out" src="images/stacked.jpg" />
 
+        <h2>What's this?</h2>
         <p>Imagine video conferencing just working, being simple & fun actually.
         That's <em>Dunlin</em>, a tool to communicate with others via video,
         just inside your desktop browser window. It requires no separate download and the
         communication is encrypted by default.</p>
 
         <p><em>Dunlins</em> focus is ease of use. <a href="https://video.dunlin.io" title="Try it">Share a link</a> with all the members of your conference. Now you're ready to talk to each other.</p>
+      </section>
+
+      <section class="column content-module content-module-screens visually-hidden">
+        <p><img class="sample-screen" src="images/wide.jpg" /></p>
+        <p><img class="sample-screen" src="images/stacked.jpg" /></p>
+      </section>
+
+      <section class="column content-module content-module-feat">
       </section>
     </div>
 
